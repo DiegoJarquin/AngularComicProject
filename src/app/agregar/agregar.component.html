@@ -1,0 +1,26 @@
+<div id="box" [formGroup]="formGroup">
+  <button id="boton" (click)="back()">Regresar</button>
+  <div id="fields">
+   <p>Nombre:</p>
+    <input type="text" formControlName="name" id="inputText">
+  </div>
+  <div  id="fields">
+    <p>Fecha de publicación:</p>
+
+    <input type="date" formControlName="date" id="inputText">
+  </div>
+  <div  id="fields">
+    <p>Sinopsis:</p>
+    <input type="text" formControlName="sinopsis" id="largeText">
+  </div>
+  <div  id="fields">
+    <p>Editorial:</p>
+    <select formControlName="editorial" id="inputText">
+      <option value="Marvel">Marvel</option>
+      <option value="DC">DC</option>
+    </select>
+  </div>
+  <button id="boton" (click)="grabar()">Registrar Comic</button>
+  <h4 style="color: #2d8530">{{msg}}</h4>
+
+</div>

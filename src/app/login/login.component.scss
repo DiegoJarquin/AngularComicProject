@@ -1,0 +1,43 @@
+#box{
+  position: relative;
+  border-radius: 3px;
+  font-family: sans-serif;
+  left: 35%;
+  background-color: #ccdffc;
+  overflow: auto;
+  width: 20%;
+  border-color: black;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  padding: 5%;
+}
+#topbar {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: 0;
+  background-color: black;
+  border-radius: 3px;
+}
+
+#namediv {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+#inputText {
+
+  width: 90%;
+
+
+}
+#fields {
+  margin: 5%;
+  //padding: 5%;
+}
+#boton {
+  margin-top: 2%;
+  width: 100%;
+  height: 50px;
+}

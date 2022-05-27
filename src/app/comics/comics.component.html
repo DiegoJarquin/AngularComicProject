@@ -1,0 +1,20 @@
+<div id="box">
+  <div>
+    <h3>Listado de Comics:</h3>
+    <button id="boton" (click)="agregar()">Agregar</button>
+  </div>
+
+  <table>
+    <thead></thead>
+    <tr *ngFor="let comic of listadoComics">
+      <div id="item">
+<!--        <td><h2>{{comic.comic_id}}</h2></td>-->
+        <div style="width: 80px"><td *ngIf="comic.editorial == 'Marvel'; else dc"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/800px-Marvel_Logo.svg.png" style="height: 30px; width: 80px; "></td></div>
+        <ng-template #dc style="width: 80px"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/DC_Comics_logo.svg/600px-DC_Comics_logo.svg.png?20161226021232" style="height: 50px; width: 50px; "></ng-template>
+        <td><div style="margin-left: 5%; margin-right: 10%; width: 700px"><h4>Nombre: {{comic.nombre}}</h4><h4>Fecha: {{comic.date | date : 'dd/MM/yyyy'}}</h4><div style="width: 650px;   word-wrap: break-word">{{comic.sinopsis}}</div></div></td>
+        <td><button id="edit"><img src="https://i.pinimg.com/originals/6e/35/ef/6e35ef7687065eb1e4c037781f3c4cdc.png" style="width: 40px; height: 40px" (click)="editar(comic)"></button></td>
+        <td><button id="edit"><img src="https://www.pngall.com/wp-content/uploads/5/Delete-Bin-Trash-PNG-Clipart.png" style="width: 40px; height: 40px" (click)="delete(comic.comic_id)"></button></td>
+      </div>
+    </tr>
+  </table>
+</div>

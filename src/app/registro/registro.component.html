@@ -1,0 +1,33 @@
+<div id="box" [formGroup]="formGroup">
+  <button id="boton" (click)="back()">Regresar</button>
+  <div id="fields">
+    <p>Nombre:</p>
+    <input type="text" formControlName="name" id="inputText">
+  </div>
+  <div  id="fields">
+    <p>Usuario:</p>
+    <input type="text" formControlName="username" id="inputText">
+  </div>
+  <div  id="fields">
+    <p>Contraseña:</p>
+    <input type="password" formControlName="pass" id="inputText">
+  </div>
+  <div  id="fields">
+    <p>Fecha de nacimiento:</p>
+    <input type="date" formControlName="birth" id="inputText">
+  </div>
+  <div  id="fields">
+    Sexo:
+    <label>
+      <input type="radio" formControlName="sex" value="Masculino">
+      <span>Masculino</span>
+    </label>
+    <label>
+      <input type="radio" formControlName="sex" value="Femenino">
+      <span>Femenino</span>
+    </label>
+
+  </div>
+  <button id="boton" (click)="grabar()">Registrar</button>
+  <h4 style="color: #2d8530">{{msg}}</h4>
+</div>

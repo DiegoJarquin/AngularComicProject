@@ -1,0 +1,13 @@
+
+<div id="box" [formGroup]="formGroup">
+  <div id="fields">
+    Usuario:
+    <input type="text" formControlName="username" id="inputText">
+  </div>
+  <div  id="fields">
+    Contraseña:
+    <input type="password" formControlName="pass" id="inputText">
+  </div>
+  <button id="boton" (click)="login()">Ingresar al Sistema</button>
+  <button id="boton" (click)="registrar()" >Registrar Usuario</button>
+</div>
