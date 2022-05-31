@@ -10,7 +10,7 @@
   </div>
   <div  id="fields">
     <p>Contraseña:</p>
-    <input type="password" formControlName="pass" id="inputText">
+    <input type="password" formControlName="pass" id="inputText" pattern=".{6,}">
   </div>
   <div  id="fields">
     <p>Fecha de nacimiento:</p>
@@ -28,6 +28,7 @@
     </label>
 
   </div>
+
   <button id="boton" (click)="grabar()">Registrar</button>
-  <h4 style="color: #2d8530">{{msg}}</h4>
+  <h4 style="color: blue">{{msg}}</h4>
 </div>

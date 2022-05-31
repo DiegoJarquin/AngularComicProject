@@ -99,6 +99,18 @@ module.exports = (app) => {
     });
   });
 
+  app.post("/edit", (req, res)=>{
+    let consulta = `UPDATE comics SET nombre = '${req.body.nombre}',date = '${req.body.date}', sinopsis = '${req.body.sinopsis}', editorial = '${req.body.editorial}' WHERE comic_id = '${req.body.comic_id}'`;
+    conn.query(consulta, (err, rows)=>{
+      if (err) {
+        console.log(consulta);
+        res.json({status: 0, mensaje: "Error en modificacion", datos: []});
+      } else {
+        res.json({status: 1, mensaje: "Dato modificado satisfactoriamente", datos:[`${req.body}`]});
+      }
+    });
+  });
+
 }
 
 

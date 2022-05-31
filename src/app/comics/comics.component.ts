@@ -46,9 +46,9 @@ export class ComicsComponent implements OnInit {
     this.router.navigateByUrl("/agregar");
   }
 
-  editar(comic: any){
-    this.onSelected.emit(comic);
-    this.router.navigateByUrl("/edit")
+  editar(comic: Comics){
+    // this.onSelected.emit(comic);
+    this.router.navigate(["/edit",comic])
   }
 
 }

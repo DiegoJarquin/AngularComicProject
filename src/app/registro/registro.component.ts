@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {BackendService} from "../services/backend.service";
 import {Router} from "@angular/router";
 import {NewComicRequest} from "../models/NewComicRequest";
@@ -19,7 +19,7 @@ export class RegistroComponent implements OnInit {
     this.formGroup = this.fb.group({
       name:'',
       username:'',
-      pass:'',
+      pass:['', [Validators.required, Validators.minLength(6)]],
       birth:'',
       sex: ''
     })
@@ -30,12 +30,20 @@ export class RegistroComponent implements OnInit {
   }
 
   grabar(){
-    let newUser = new NewUserRequest(this.formGroup.controls["name"].value, this.formGroup.controls["username"].value,this.formGroup.controls["pass"].value,this.formGroup.controls["birth"].value,this.formGroup.controls["sex"].value);
-    this.backend.agregarUsuario(newUser).subscribe(
-      x => {
-        console.log(x);
-        this.msg = x.mensaje;
-      });
+    if(this.formGroup.invalid){
+      this.msg = "Largo mínimo de contraseña: 6 caracteres";
+    }else {
+      let newUser = new NewUserRequest(this.formGroup.controls["name"].value, this.formGroup.controls["username"].value,this.formGroup.controls["pass"].value,this.formGroup.controls["birth"].value,this.formGroup.controls["sex"].value);
+      this.backend.agregarUsuario(newUser).subscribe(
+        x => {
+          console.log(x);
+          this.msg = x.mensaje;
+        });
+      setTimeout(()=>{
+        this.router.navigateByUrl("/login");
+      },5000);
+
+    }
   }
 
 }

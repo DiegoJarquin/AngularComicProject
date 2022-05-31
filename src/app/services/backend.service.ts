@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { ComicsResponse } from '../models/ComicsResponse';
 import { DelRequests } from '../models/DelRequests';
 import { DelResponse } from '../models/DelResponse';
+import { EditComicRequest } from '../models/EditComicRequest';
 import { LoginRequest } from '../models/LoginRequest';
 import { LoginResponse } from '../models/LoginResponse';
 import { NewComicRequest } from '../models/NewComicRequest';
@@ -29,15 +30,18 @@ export class BackendService {
     return this.http.get<ComicsResponse>(BE_API+"/comics?token="+token, header);
   }
   delComics(id: number){
-    // console.log(datos);
     return this.http.delete<DelResponse>(BE_API+"/del?comic_id="+id, header);
   }
   agregarComic(datos: NewComicRequest, token: string){
+    console.log(datos);
     return this.http.post<NewComicResponse>(BE_API+"/agregar?token="+token, datos, header);
   }
 
   agregarUsuario(datos: NewUserRequest){
     return this.http.post<NewUserResponse>(BE_API+"/registro", datos, header);
+  }
+  editarComic(datos: EditComicRequest){
+    return this.http.post<NewComicResponse>(BE_API+"/edit", datos, header);
   }
 
 

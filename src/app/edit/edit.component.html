@@ -1,8 +1,9 @@
 <div id="box" [formGroup]="formGroup">
   <button id="boton" (click)="back()">Regresar</button>
-  <div id="fields" *ngIf="selectedComic">
+
+  <div id="fields">
     <p>Nombre:</p>
-    <input type="text" formControlName="name" id="inputText" value="{{selectedComic.nombre}}">
+    <input type="text" formControlName="name" id="inputText">
   </div>
   <div  id="fields">
     <p>Fecha de publicación:</p>
@@ -20,7 +21,7 @@
       <option value="DC">DC</option>
     </select>
   </div>
-  <button id="boton" (click)="grabar()">Registrar Comic</button>
+  <button id="boton" (click)="grabar()">Editar Comic</button>
   <h4 style="color: #2d8530">{{msg}}</h4>
 
 </div>

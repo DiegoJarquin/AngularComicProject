@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 
 import { AppComponent } from './app.component';
@@ -30,7 +31,9 @@ import { EditComponent } from './edit/edit.component';
     HttpClientModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
